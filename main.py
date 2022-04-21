@@ -39,6 +39,7 @@ def processToFile():
     dic = myEecelToDIC(excelFile)
     for i, j in dic.items():
         try:
+            # TODO 需要拓展为并发，否则几百个数据也要几十秒才可以完成
             sendResp = requestTest(j)
             code = sendResp.status_code
         except:
